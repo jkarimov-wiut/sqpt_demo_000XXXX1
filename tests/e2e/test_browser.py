@@ -9,6 +9,7 @@ def server():
     yield
     proc.terminate()
 
+@pytest.mark.e2e
 def test_docs_page_loads(server):
     with sync_playwright() as p:
         browser = p.chromium.launch()
